@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: #02e7b6;
+  padding: 40px;
+}
+
+.featuresContainer {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+
+.cardContainer {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .featuresContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
