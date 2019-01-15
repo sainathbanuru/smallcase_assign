@@ -6,9 +6,9 @@ export default class Features extends React.Component {
   render() {
     return (
       <div className="featuresContainer">
-        <Card data={feature_1} />
-        <Card data={feature_2} />
-        <Card data={feature_3} />
+        <Card data={%_feature_1_%} />
+        <Card data={%_feature_2_%} />
+        <Card data={%_feature_3_%} />
       </div>
     );
   }

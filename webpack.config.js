@@ -11,8 +11,20 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env"] }
+        use: [
+          {
+            loader: "babel-loader",
+            options: { presets: ["@babel/env"] }
+          },
+          {
+            loader: path.resolve("./customLoader"),
+            // Here we define all the terms that we need to replace in our code. I chose a particular format like "%_(term)_%"
+            // And we use the terms in that format in our code
+            options: {
+              terms: Object.keys(features).map(feature => `%_${feature}_%`)
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
@@ -31,10 +43,5 @@ module.exports = {
     port: 8080,
     publicPath: "http://localhost:8080/dist/"
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      ...features
-    }),
-    new HtmlWebpackPlugin()
-  ]
+  plugins: [new HtmlWebpackPlugin()]
 };

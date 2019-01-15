@@ -4,5 +4,6 @@
 
 1.  Clone or download the project
 2.  Run "yarn" inside project directory
-3.  Here you can define 3 features in data.js file. And webpack will automatically include them as global variables in your code. And use those variables to define content in your page.
-4.  You can then run "yarn webpack-dev-server" and you can see the data change on "http://localhost:8080/"
+3.  we define all the content as variables in data.js file.
+4.  And the variables defined in the data.js file can be used in this format "%_variable_%" in our code
+5.  You can then run "yarn webpack-dev-server" and you can see that the variables are replaced with the content defined in data.js file on "http://localhost:8080/"
